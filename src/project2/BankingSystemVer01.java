@@ -15,7 +15,7 @@ public class BankingSystemVer01 implements MenuChoice
     public static void showMenu(){
 		boolean run = true;
 		while(run) {
-			System.out.println("-----Menu------");
+			System.out.println("------Menu------");
 			System.out.println("1. 계좌계설");
 			System.out.println("2. 입금");
 			System.out.println("3. 출금");
@@ -94,22 +94,22 @@ public class BankingSystemVer01 implements MenuChoice
 	}
 	public static void showAccInfo() {
 		System.out.println("***계좌정보출력***");
-		System.out.println("-----------");
+		System.out.println("------------------");
 		for (int i = 0; i < accountArray.length; i++) {
 			if (accountArray[i] == null) {
 				break;
 			}
-			System.out.println(
-					accountArray[i].getAccountID() + "\t" + accountArray[i].getCustomName() + "\t" + accountArray[i].getAccMoney());
+			System.out.println("계좌번호 :"+accountArray[i].getAccountID());
+			System.out.println("고객이름 :"+accountArray[i].getCustomName()); 
+			System.out.println("잔고 :"+accountArray[i].getAccMoney());
 		}
-		System.out.println("-----------");
+		System.out.println("------------------");
 		System.out.println("전체계좌정보 출력이 완료되었습니다.");
 		
 	}
 	
 	public static void main(String[] args)
 	{
-		Account acc1 = new Account("111_222_4444", "홍길동", 10000);
-		acc1.showAccountInfo();
+		showMenu();		
 	}
 }

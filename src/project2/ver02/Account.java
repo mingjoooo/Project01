@@ -2,9 +2,9 @@ package project2.ver02;
 
 public class Account
 {
-	private String accountID;	//계좌번호
-	private String customName;	//고객이름
-	private int accMoney;	//잔고
+	String accountID;	//계좌번호
+	String customName;	//고객이름
+	int accMoney;		//잔고
 	
 	//생성자
 	public Account(String accountID, String customName, int accMoney)
@@ -16,9 +16,9 @@ public class Account
 	
 	//계좌정보출력
 	public void showAccountInfo() {
-		System.out.println("계좌번호:"+ accountID);
-		System.out.println("예금주:"+ customName);
-		System.out.println("잔고:"+ accMoney);
+		System.out.println("계좌번호>"+ accountID);
+		System.out.println("고객이름>"+ customName);
+		System.out.println("잔고>"+ accMoney);
 	}
 
 	public String getAccountID() {
@@ -43,5 +43,7 @@ public class Account
 
 	public void setAccMoney(int accMoney) {
 		this.accMoney = accMoney;
+		
 	}
+
 }

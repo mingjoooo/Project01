@@ -44,4 +44,8 @@ public class Account
 	public void setAccMoney(int accMoney) {
 		this.accMoney = accMoney;
 	}
+	
+	public void deposit(int deposit) {
+		
+	}
 }
