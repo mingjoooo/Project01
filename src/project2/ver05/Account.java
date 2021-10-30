@@ -1,4 +1,4 @@
-package project2.ver01;
+package project2.ver05;
 
 import java.util.Scanner;
 
@@ -19,7 +19,7 @@ public class Account
 	//계좌정보출력
 	public void showAccountInfo() {
 		System.out.println("계좌번호:"+ accountID);
-		System.out.println("예금주:"+ customName);
+		System.out.println("고객이름:"+ customName);
 		System.out.println("잔고:"+ accMoney);
 	}
 
@@ -49,22 +49,22 @@ public class Account
 	
 	public void deposit(int deposit) {}
 	
-	public int cnt =0;
+	public static int cnt =0;
 	
-	Account[] accountArray = new Account[50];
-    Scanner scanner = new Scanner(System.in);
+	static Account[] accountArray = new Account[50];
+    static Scanner scanner = new Scanner(System.in);
 	
-	public void makeAccount() {
+	public static void makeAccount() {
 		String accountID = null;
         String customName = null;
         int accMoney = 0;
         accountArray[cnt] = new Account(accountID, customName, accMoney);
         System.out.println("***신규계좌개설***");
         System.out.print("계좌번호 : ");
-        accountID = scanner.nextLine();
+        accountID = scanner.next();
         accountArray[cnt].setAccountID(accountID); 
         System.out.print("고객이름 : ");
-        customName = scanner.nextLine();
+        customName = scanner.next();
         accountArray[cnt].setCustomName(customName);
         System.out.print("잔고 : ");
         accMoney = scanner.nextInt();
@@ -73,12 +73,12 @@ public class Account
  
         cnt++;
     }
-	public void depositMoney() {
+	public static void depositMoney() {
 		System.out.println("***입   금***");
 		System.out.println("계좌번호와 입금할 금액을 입력하세요");
 		
         System.out.print("계좌번호: ");
-        String accountID = scanner.nextLine();
+        String accountID = scanner.next();
         System.out.print("입금액: ");
         int accMoney = scanner.nextInt();
         
@@ -90,12 +90,12 @@ public class Account
             else System.out.println("입력하신 계좌번호가 존재하지 않습니다.");
         }
     }
-	public void withdrawMoney() {
+	public static void withdrawMoney() {
         System.out.println("***출   금***");
         System.out.println("계좌번호와 출금할 금액을 입력하세요");
         
         System.out.print("계좌번호: ");
-        String accountID = scanner.nextLine();
+        String accountID = scanner.next();
         System.out.print("출금액: ");
         int accMoney = scanner.nextInt();
         
@@ -107,7 +107,7 @@ public class Account
             else System.out.println("입력하신 계좌번호가 존재하지 않습니다.");
         }
 	}
-	public void showAccInfo() {
+	public static void showAccInfo() {
 		System.out.println("***계좌정보출력***");
 		System.out.println("------------------");
 		for (int i = 0; i < accountArray.length; i++) {
